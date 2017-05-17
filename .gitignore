@@ -1,0 +1,5 @@
+java-client/target
+java-client/.idea
+java-client/java-client.iml
+
+.DS_Store
