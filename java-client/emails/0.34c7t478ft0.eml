@@ -1,0 +1,255 @@
+Delivered-To: simon.lamplugh@first-utility.com
+Received: by 10.28.113.88 with SMTP id m85csp703880wmc;
+        Thu, 11 May 2017 06:07:15 -0700 (PDT)
+X-Received: by 10.37.229.199 with SMTP id c190mr192510ybh.41.1494508035330;
+        Thu, 11 May 2017 06:07:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1494508035; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Kq2I1VXtpzxCS8OJrj/kG5ZsHui+OmdV8LsESmqMUL2mDdeYI4V+9Gk+uBweGvqe5M
+         uT0fbmvpRNhs1pQNxBTd+YYBJpVNQq6tBY9ujmKAqldgIW5Yikfjz8u59iVvJtr8hUhW
+         TvA/YZjcXnHO9s5tAK3EAWFuPt4XTTT1mvNSu3WoIbcMXHL17pdOGC1O1jGO0VrsK0Ws
+         heRlss+fEPiXLDSqB8DaY+h0kJ/rgN60kX23z941nnKGT3IhO80lfFmsA8IaELZ1Wqot
+         wo02xThJ9vJp0teYGW3vAGXQS4WCqwDZBL9J1c8K5Rg3OWevd4sNkZao8IgdGaqPT1Zs
+         QS0Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:references:in-reply-to:mime-version
+         :dkim-signature:arc-authentication-results;
+        bh=xj0YowsiO+hJHzrZc9Q+GOeLp5Un0maTrFys/0y5FRE=;
+        b=R9qILRASDpe2VLb7lBFL/gumD8m8wLDFDqiP4mIrEqhy6h/LqNz8mZSqfTKh8+48IX
+         grAifpA7HAksXv3gpYFK0B8GmeNesuVvkG38KbbLxV0Wgn4VsolOxMfv2EKRZBYrKi+G
+         Jxg2g+BfNMrQqB6ch25WyZ+qKoe7Ai8CyGckjaMziXHonfJ4R0urOWuOhA9k1RWrY63D
+         Sdjq1EJHguUukKRQ5f554o3w9WyxX4Id2PBd99QY1Dmx1ECtRpxiKueq/aFiWCKfNniK
+         ie4QLgVNODyObn3LRrkjS+Swdl3Qdmo4CDaNPSPL0rGBH2VKZqZkmqznIWsm80Oa7NqJ
+         Nb2g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@first-utility.com;
+       spf=pass (google.com: domain of jaspreet.bains@first-utility.com designates 2607:f8b0:4002:c05::232 as permitted sender) smtp.mailfrom=jaspreet.bains@first-utility.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=first-utility.com
+Return-Path: <jaspreet.bains@first-utility.com>
+Received: from mail-yw0-x232.google.com (mail-yw0-x232.google.com. [2607:f8b0:4002:c05::232])
+        by mx.google.com with ESMTPS id 65si29479ybb.180.2017.05.11.06.07.15
+        for <simon.lamplugh@first-utility.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 11 May 2017 06:07:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jaspreet.bains@first-utility.com designates 2607:f8b0:4002:c05::232 as permitted sender) client-ip=2607:f8b0:4002:c05::232;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@first-utility.com;
+       spf=pass (google.com: domain of jaspreet.bains@first-utility.com designates 2607:f8b0:4002:c05::232 as permitted sender) smtp.mailfrom=jaspreet.bains@first-utility.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=first-utility.com
+Received: by mail-yw0-x232.google.com with SMTP id l14so12206571ywk.1
+        for <simon.lamplugh@first-utility.com>; Thu, 11 May 2017 06:07:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=first-utility.com; s=google;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=xj0YowsiO+hJHzrZc9Q+GOeLp5Un0maTrFys/0y5FRE=;
+        b=ePtJFl36YDlG+md1UavOeFgyrLIKdjRRiUNtYloDNsSMlugySsFUJzwy4MRXOFPQ5A
+         kHwrNLvuCNUYRB6/Pr1BiYIF7TMXcEB1j+GjuOju7UuJOc1+069X3bdhQo9yJLTxGlBO
+         cUaVr/XZXNeHmaAwzK6K33Vj2iS5UAn/xlWDw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=xj0YowsiO+hJHzrZc9Q+GOeLp5Un0maTrFys/0y5FRE=;
+        b=WIUIHc1BdDIKxf3qQtBgQ/UVaGZ1bq1HX7gSaaD24/uUuP9SPBJsAtEz7ooLE6UEpS
+         xRtAXF50GdRYtwCCYZ6fXGuIqCvLSI5TVFqHNGPQg1oxK30YlSaHVpcd3EsuuXZJp29n
+         DPZnUmLqUsVS7UqgGTQivDpUCzG6dJgvXidXucsrscmoymnM20+eGEgUknnIdINHr5ue
+         VT7XBEE+jlZPugUu8kMgOOifpd22Oht6jDMmIyBR9KoAxpmf/nx7eBSnZTLjzGfoaZYH
+         ZEZdksNyukuFAUxyDpogn4KWgK+vaPZAsRqzhPS5kqsydEcsvjpFP3UuG7jm9No6NY0i
+         NSJQ==
+X-Gm-Message-State: AODbwcCV53WNQwvO7EONvGIHjlrfXAoeZiH1NMO8YyJtOsaaG97KyElH
+	1Fl4FtmLaE9VFTIbM6/AG/c/sQeaPZZlcvuqTQ==
+X-Received: by 10.129.132.85 with SMTP id u82mr188943ywf.286.1494508034723;
+ Thu, 11 May 2017 06:07:14 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.37.77.9 with HTTP; Thu, 11 May 2017 06:07:14 -0700 (PDT)
+In-Reply-To: <CAJ1=0ion0QUsykqAWtJSqTAXWX_3rkNG6XWLFBesTGFH3W_KVA@mail.gmail.com>
+References: <630babb7-1077-4bde-b986-c897964d2075@EXHUB02.opaltelecom.com> <CAJ1=0ion0QUsykqAWtJSqTAXWX_3rkNG6XWLFBesTGFH3W_KVA@mail.gmail.com>
+From: Jaspreet Bains <jaspreet.bains@first-utility.com>
+Date: Thu, 11 May 2017 14:07:14 +0100
+Message-ID: <CA+Tshmys=1kT_htiw+nPfV_WXz+25o200o55Q2n15Asx0Jc2Xw@mail.gmail.com>
+Subject: Fwd: Potential Fraud Alert CLI 01227764781
+To: Simon Lamplugh <simon.lamplugh@first-utility.com>, 
+	Ian Chilton <ian.chilton@first-utility.com>
+Content-Type: multipart/alternative; boundary="001a114ec786863d00054f3f445f"
+
+--001a114ec786863d00054f3f445f
+Content-Type: text/plain; charset="UTF-8"
+
+---------- Forwarded message ----------
+From: BBHigh Usage <bbhighusage@first-utility.com>
+Date: 10 May 2017 at 16:10
+Subject: Fwd: Potential Fraud Alert CLI 01227764781
+To: Jaspreet Bains <jaspreet.bains@first-utility.com>
+
+
+
+---------- Forwarded message ----------
+From: <talktalkfraud@talktalkplc.com>
+Date: 10 May 2017 at 08:40
+Subject: Potential Fraud Alert CLI 01227764781
+To: fraud@talktalkplc.com, bbhighusage@first-utility.com
+
+
+Case Manager Notification:
+CLI: 01227764781
+NOTIFIED: fraud@talktalkplc.com,bbhighusage@first-utility.com
+DATE/TIME END DATE/TIME TERMINATING DURATION ACCESS CODE PSEUDO COST FRAUD
+CHECK CAUSE FOR TERMINATION
+2017-05-10 08:06:08 2017-05-10 08:25:31 09097428123 00:19:23 SC021 (0909742)
+6.00 AA - Single Call to PRS (09*) Min Dur 15mins
+
+This mail is auto generated, Please do not respond to the sender address.
+Any questions on the content should be mailed to fraud@talktalkplc.com
+
+This alert is provided to you on a voluntary, free of charge and ad hoc
+basis. There is no contractual service or other obligation under which
+TalkTalk Business is required to supply such alerts. We reserve the right
+to stop providing these alerts at any time but if we do we will let you
+know by sending an email to the email address to which we send these alerts.
+
+The information provided within this alert is based on certain watch points
+that we have decided in our absolute discretion and which we reserve the
+right to vary at any time. We do not guarantee the accuracy of any alerts
+nor do we make any assertion about the nature or status of the calls
+highlighted in the alerts. You are required to pay for all calls in
+accordance with the terms of your reseller agreement with us.
+
+The information provided within this alert may be based upon unmediated
+call records which may not yet be available to you on your FTP site. CDRs
+are made available to you on a daily basis. It is for you to decide how you
+want to manage or review the call traffic relating to your account with
+TalkTalk Business but we suggest you regularly review the CDRs to monitor
+the traffic based on the criteria you deem to be appropriate, bearing in
+mind your legal and regulatory obligations, rather than relying on our
+alerts.
+
+############################################################
+##################
+This communication together with any attachments transmitted with it
+("this E-Mail") is intended only for the use of the addressee and may
+contain
+information which is privileged and confidential. If the reader of this
+E-Mail
+is not the intended recipient or the employee or agent responsible for
+delivering it to the intended recipient you are hereby notified that any
+use,
+dissemination, forwarding, printing or copying of this E-Mail is strictly
+prohibited. Addressees should check this E-mail for viruses. The Company
+makes
+no representations as regards the absence of viruses in this E-Mail. If you
+have received this E-Mail in error please notify our IT Service Desk
+immediately by e-mail at abuse.ttb@talktalkplc.com Please then immediately
+delete, erase or otherwise destroy this E-Mail and any copies of it.
+
+Any opinions expressed in this E-Mail are those of the author and do not
+necessarily constitute the views of the Company. Nothing in this E-Mail
+shall
+bind the Company in any contract or obligation.
+
+For the purposes of this E-Mail "the Company" means TalkTalk Telecom Group
+PLC
+and/or any of its subsidiaries.
+
+Please feel free to visit our website: www.talktalkgroup.com
+
+TalkTalk Telecom Group Plc (Registered in England & Wales No. 7105891)
+11 Evesham Street, London W11 4AR
+############################################################
+##################
+
+--001a114ec786863d00054f3f445f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">
+<br><br><div class=3D"gmail_quote">---------- Forwarded message ----------<=
+br>From: <b class=3D"gmail_sendername">BBHigh Usage</b> <span dir=3D"ltr">&=
+lt;<a href=3D"mailto:bbhighusage@first-utility.com">bbhighusage@first-utili=
+ty.com</a>&gt;</span><br>Date: 10 May 2017 at 16:10<br>Subject: Fwd: Potent=
+ial Fraud Alert CLI 01227764781<br>To: Jaspreet Bains &lt;<a href=3D"mailto=
+:jaspreet.bains@first-utility.com">jaspreet.bains@first-utility.com</a>&gt;=
+<br><br><br><div dir=3D"ltr"><br><div class=3D"gmail_quote">---------- Forw=
+arded message ----------<br>From: <b class=3D"gmail_sendername"></b> <span =
+dir=3D"ltr">&lt;<a href=3D"mailto:talktalkfraud@talktalkplc.com" target=3D"=
+_blank">talktalkfraud@talktalkplc.com</a><wbr>&gt;</span><br>Date: 10 May 2=
+017 at 08:40<br>Subject: Potential Fraud Alert CLI 01227764781<br>To: <a hr=
+ef=3D"mailto:fraud@talktalkplc.com" target=3D"_blank">fraud@talktalkplc.com=
+</a>, <a href=3D"mailto:bbhighusage@first-utility.com" target=3D"_blank">bb=
+highusage@first-utility.com</a><br><br><br><div>Case Manager Notification:
+	<table border=3D"1">
+	<tbody><tr><td>CLI:</td><td>01227764781</td></tr>
+	<tr><td>NOTIFIED:</td><td><a href=3D"mailto:fraud@talktalkplc.com" target=
+=3D"_blank">fraud@talktalkplc.com</a>,<a href=3D"mailto:bbhighusage@first-u=
+tility.com" target=3D"_blank">bbhighus<wbr>age@first-utility.com</a></td></=
+tr>
+	</tbody></table><table border=3D"1"><tbody><tr><td>DATE/TIME</td><td>END D=
+ATE/TIME</td><td>TERMINATING</td><td>DURATION</td><td>ACCESS CODE</td><td>P=
+SEUDO COST</td><td>FRAUD CHECK</td><td>CAUSE FOR TERMINATION</td></tr><tr><=
+td>2017-05-10 08:06:08</td><td>2017-05-10 08:25:31</td><td>09097428123</td>=
+<td>00:19:23</td><td>SC021 (0909742)</td><td>6.00</td><td>AA - Single Call =
+to PRS (09*) Min Dur 15mins</td><td></td></tr></tbody></table><p>This mail =
+is auto generated, Please do not respond to the sender address.  Any questi=
+ons on the content should be mailed to <a href=3D"mailto:fraud@talktalkplc.=
+com" target=3D"_blank">fraud@talktalkplc.com</a></p>
+<p>This alert is provided to you on a voluntary, free of charge and ad hoc =
+basis.  There is no contractual service or other obligation under which Tal=
+kTalk Business is required to supply such alerts.  We reserve the right to =
+stop providing these alerts at any time but if we do we will let you know b=
+y sending an email to the email address to which we send these alerts.</p>
+<p>The information provided within this alert is based on certain watch poi=
+nts that we have decided in our absolute discretion and which we reserve th=
+e right to vary at any time.  We do not guarantee the accuracy of any alert=
+s nor do we make any assertion about the nature or status of the calls high=
+lighted in the alerts.  You are required to pay for all calls in accordance=
+ with the terms of your reseller agreement with us.</p>
+<p>The information provided within this alert may be based upon unmediated =
+call records which may not yet be available to you on your FTP site. CDRs a=
+re made available to you on a daily basis. It is for you to decide how you =
+want to manage or review the call traffic relating to your account with Tal=
+kTalk Business but we suggest you regularly review the CDRs to monitor the =
+traffic based on the criteria you deem to be appropriate, bearing in mind y=
+our legal and regulatory obligations, rather than relying on our alerts.</p=
+><p>##############################<wbr>##############################<wbr>#=
+#################<br>
+This communication together with any attachments transmitted with it<br>
+(&quot;this E-Mail&quot;) is intended only for the use of the addressee and=
+ may contain<br>
+information which is privileged and confidential. If the reader of this E-M=
+ail<br>
+is not the intended recipient or the employee or agent responsible for<br>
+delivering it to the intended recipient you are hereby notified that any us=
+e,<br>
+dissemination, forwarding, printing or copying of this E-Mail is strictly<b=
+r>
+prohibited. Addressees should check this E-mail for viruses. The Company ma=
+kes<br>
+no representations as regards the absence of viruses in this E-Mail. If you=
+<br>
+have received this E-Mail in error please notify our IT Service Desk<br>
+immediately by e-mail at <a href=3D"mailto:abuse.ttb@talktalkplc.com" targe=
+t=3D"_blank">abuse.ttb@talktalkplc.com</a> Please then immediately<br>
+delete, erase or otherwise destroy this E-Mail and any copies of it.</p>
+
+<p>Any opinions expressed in this E-Mail are those of the author and do not=
+<br>
+necessarily constitute the views of the Company. Nothing in this E-Mail sha=
+ll<br>
+bind the Company in any contract or obligation.</p>
+
+<p>For the purposes of this E-Mail &quot;the Company&quot; means TalkTalk T=
+elecom Group PLC<br>
+and/or any of its subsidiaries.</p>
+
+<p>Please feel free to visit our website: <a href=3D"http://www.talktalkgro=
+up.com" target=3D"_blank">www.talktalkgroup.com</a> </p>
+
+<p>TalkTalk Telecom Group Plc (Registered in England &amp; Wales No. 710589=
+1)<br>
+11 Evesham Street, London W11 4AR<br>
+##############################<wbr>##############################<wbr>#####=
+#############</p></div>
+
+</div><br></div>
+</div><br></div>
+
+--001a114ec786863d00054f3f445f--

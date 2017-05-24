@@ -1,0 +1,84 @@
+Delivered-To: simon.lamplugh@first-utility.com
+Received: by 10.28.186.135 with SMTP id k129csp100573wmf;
+        Wed, 17 May 2017 02:40:05 -0700 (PDT)
+X-Received: by 10.223.161.194 with SMTP id v2mr1702703wrv.132.1495014005335;
+        Wed, 17 May 2017 02:40:05 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1495014005; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BBwwzsgvPXGKWUMx+s+R+lzaqsK/qeJUSt+CXCxw7oWBmD2jQh+twhIHitMLkHjrlt
+         moCyDRa4pN3DCsoPKUHSmBOz6XfDTVvn7/qT/BxPw8dO6/m9XKiJCFsH+pW1z86FhekS
+         z16iROkz8X+DXJFEjK5vHQNSuB1AKTiK3mNUAEchQGFVIe6oqwKuBz4303BNbs0ADgNw
+         gS2MnJfD25l3hswCIv+Lk362Vh74x/PawiQgfMQj9Fw6AzY1ssMyoIu2lAjC4qybcaWX
+         tBJcZ7JDgUhcK2n7tTCsxtTCk/MYbdN1xfPi1GTuk6PLdPTDVkZjN+t77VheyV8cK5DQ
+         0CLg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature
+         :arc-authentication-results;
+        bh=+hQc/Z4y+ZwUOEFMQJgM0wKrPxKiQpJO7Au8ro6AC7M=;
+        b=0wheh5YhlP2djTKhY1pTihmiVpGSKrNoHrQKsCuVqyKbsn7LIorSigrEF5p5n4RusZ
+         3oQT2iTlDzRh5I6Hl7x9+ap8ETr0iZTJJTELHBno1ApfN55Tl9OHzlOZujnTXN4K9gct
+         xOgxl+xE/HGapZbjU2FjcfFYaoJKSrmNHr9hVImGZnt4ZaS1NXOHIyLGaaEds5hwJ418
+         mOl5epD4HjO11FsHnZdXGEYdu6gS5Ko9d+LOUIerbDICjscHcDhinx3ADMam04/+IC5u
+         xK7GavMlBAuMYTeHHFhxMU3BQ/O5UTXFvEkVq+uuVKe6GfchdDYFkJ8iHMT1tFnNYLTY
+         a2jw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com;
+       spf=pass (google.com: domain of simon.lamplugh@gmail.com designates 2a00:1450:400c:c09::234 as permitted sender) smtp.mailfrom=simon.lamplugh@gmail.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gmail.com
+Return-Path: <simon.lamplugh@gmail.com>
+Received: from mail-wm0-x234.google.com (mail-wm0-x234.google.com. [2a00:1450:400c:c09::234])
+        by mx.google.com with ESMTPS id u189si2005224wmu.26.2017.05.17.02.40.05
+        for <simon.lamplugh@first-utility.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 17 May 2017 02:40:05 -0700 (PDT)
+Received-SPF: pass (google.com: domain of simon.lamplugh@gmail.com designates 2a00:1450:400c:c09::234 as permitted sender) client-ip=2a00:1450:400c:c09::234;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com;
+       spf=pass (google.com: domain of simon.lamplugh@gmail.com designates 2a00:1450:400c:c09::234 as permitted sender) smtp.mailfrom=simon.lamplugh@gmail.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gmail.com
+Received: by mail-wm0-x234.google.com with SMTP id b84so157954269wmh.0
+        for <simon.lamplugh@first-utility.com>; Wed, 17 May 2017 02:40:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=+hQc/Z4y+ZwUOEFMQJgM0wKrPxKiQpJO7Au8ro6AC7M=;
+        b=uzZttOHXQJCVyvg58y0zUo5OBka+yz6W3/HkTakFQKPtCAk/RyefRQNP7QfGJW73Ne
+         IsLSEcQvixp3/cgXOmf25PonaQTyjDwDoreVa4AY2fwBb6He9R03DidTkEmo81esUaY3
+         QTVksC9hQYhZcXQoY8WYSiMy0VAmeTLNgIekqdgEADEQi/wVJH88p5QGVUgzfJvptSFz
+         YQ1LAZrQAzroLfyKdnAoEXp9P2ALbuvj+PpOWW1m0poho0v8orUP872oDnYSe4AXYkcG
+         +pJ7AnHYQ9wQicpqVJfRwnYNDrhzr6SybpAitmObeuL2tEJ03oFCoGE1d+3su2nY09Sd
+         njIA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=+hQc/Z4y+ZwUOEFMQJgM0wKrPxKiQpJO7Au8ro6AC7M=;
+        b=oYEMNTJVh912jHysDE8b95ZqYifXbmOTVS+yfbNKHNwJTKzXNtHf+WWOTg6cb8FB7w
+         ByE5DlsXTl6w2/RvqxFEcXBVQaYSPsEWQKfNBsC1eceZK7PRW1FOQajYvhjMPH2nF036
+         nyspVQgndYtzD2JhIAeyUmWiGO/bhYzqEdkOEzFMTxuaWfhpZgNqj+DKzWZoE+3pBx5d
+         52YgrS3vGsSHEJ4f2axW1EWS1TUcWaBYuAF8HExxkE4rpDX7nblzSrgTJY1M3ak+dqxA
+         wLWnflz3LaQNzBvdRUe/IxYSV5ZhsX270aslVb6SNFRfclhJY52dr5M7HOz4WyZ7IEMm
+         wIig==
+X-Gm-Message-State: AODbwcCpa4lgRG6kuEe99xLzA398umam2afT0MgkvVhksFWSXYUQ7Q7M
+	CebaZaawd4HMoF6pZy9xG4BfUx9Zmg==
+X-Received: by 10.28.207.201 with SMTP id f192mr1684437wmg.79.1495014004901;
+ Wed, 17 May 2017 02:40:04 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.28.215.65 with HTTP; Wed, 17 May 2017 02:40:04 -0700 (PDT)
+From: Simon Lamplugh <simon.lamplugh@gmail.com>
+Date: Wed, 17 May 2017 10:40:04 +0100
+Message-ID: <CAOz7hszZvefCR+3hixK0OwX+kQXx=ULYcpwSrg_9-qyKT7TWDg@mail.gmail.com>
+Subject: Test subject
+To: Simon Lamplugh <simon.lamplugh@first-utility.com>
+Content-Type: multipart/alternative; boundary="94eb2c0d6dd6b250e2054fb51250"
+
+--94eb2c0d6dd6b250e2054fb51250
+Content-Type: text/plain; charset="UTF-8"
+
+Test Email
+
+--94eb2c0d6dd6b250e2054fb51250
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Test Email</div>
+
+--94eb2c0d6dd6b250e2054fb51250--
