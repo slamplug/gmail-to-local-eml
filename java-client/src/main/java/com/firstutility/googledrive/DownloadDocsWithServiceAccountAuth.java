@@ -3,10 +3,6 @@ package com.firstutility.googledrive;
 import static java.lang.String.format;
 
 import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
-import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
-import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
-import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
@@ -20,8 +16,6 @@ import com.google.api.services.drive.model.FileList;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -30,7 +24,7 @@ import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.List;
 
-public class QuickStart2 {
+public class DownloadDocsWithServiceAccountAuth {
 
     private static final String APPLICATION_NAME = "Drive API Quickstart";
 
@@ -59,7 +53,7 @@ public class QuickStart2 {
 
     public static Credential authorize() throws IOException, GeneralSecurityException, URISyntaxException {
 
-        URL resource = QuickStart2.class.getResource("/0b958b9c19d9.p12");
+        URL resource = DownloadDocsWithServiceAccountAuth.class.getResource("/0b958b9c19d9.p12");
 
         Credential credential  = new GoogleCredential.Builder()
                 .setTransport(HTTP_TRANSPORT)

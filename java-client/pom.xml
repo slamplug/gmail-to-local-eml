@@ -25,8 +25,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
@@ -72,6 +72,25 @@
             <artifactId>google-api-services-drive</artifactId>
             <version>v3-rev72-1.22.0</version>
         </dependency>
+
+
+        <!--<dependency>
+            <groupId>tech.blueglacier</groupId>
+            <artifactId>email-mime-parser</artifactId>
+            <version>1.0.2</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.james</groupId>
+            <artifactId>apache-mime4j</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.10.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>

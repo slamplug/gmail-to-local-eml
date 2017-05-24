@@ -25,7 +25,7 @@ import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.List;
 
-public class QuickStart {
+public class DownloadDocsWithOauth {
 
     private static final String APPLICATION_NAME = "Drive API Java Quickstart";
 
@@ -54,7 +54,7 @@ public class QuickStart {
 
     public static Credential authorize() throws IOException {
         // Load client secrets.
-        InputStream in = QuickStart.class.getResourceAsStream("/client_secrets.json");
+        InputStream in = DownloadDocsWithOauth.class.getResourceAsStream("/client_secrets.json");
         GoogleClientSecrets clientSecrets =
                 GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
